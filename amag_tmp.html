@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+
+/* ===== GLOBAL ===== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 10px; /* Prevent blank first page */
+    -webkit-print-color-adjust: exact;
+}
+
+/* ===== HEADER ===== */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 0 20px;
+}
+
+.logo-left{
+    float:left
+}
+.logo-right {
+    float:right
+}
+
+.logo-left img,
+.logo-right img {
+    height: 80px;
+    max-width: 100%;
+}
+
+.center-content {
+    flex: 1;
+    text-align: center;
+}
+
+.title-box {
+    background: #0b6b3a;
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.date-box {
+    display: inline-block;
+    background: #f2f8f5;
+    padding: 3px 20px;
+    border-radius: 25px;
+    color: #0b6b3a;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid #1f6f3e;
+    margin-top: 10px;
+}
+
+/* ===== TABLE LAYOUT (WKHTMLTOPDF SAFE) ===== */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+    table-layout: fixed;
+    page-break-inside: auto;
+}
+
+tr {
+    page-break-inside: auto;
+}
+
+td {
+    vertical-align: top;
+    page-break-inside: auto;
+}
+
+/* ===== CARDS ===== */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* ===== SECTION HEADINGS ===== */
+h3 {
+    margin-top: 0;
+    font-size: 18px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+/* ===== NEWS ITEMS (AVOID BREAK INSIDE) ===== */
+.news-item {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+}
+
+.news-title {
+    font-weight: 700;
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+}
+
+.news-summary {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+    margin: 5px 0;
+}
+
+.news-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.read-more {
+    font-size: 11px;
+    color: #0b6b3a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.source {
+    font-size: 10px;
+    color: #999;
+}
+
+.no-news {
+    color: #999;
+    font-size: 12px;
+}
+
+/* ===== IMAGES ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 13px;
+    color: #1f6f3e;
+}
+.card {
+    page-break-inside: avoid;
+}
+
+table {
+    page-break-inside: auto;
+}
+
+tr {
+    page-break-inside: avoid;
+}
+</style>
+</head>
+<body>
+
+<table style="width:100%; margin-bottom:5px;">
+  <tr>
+    <td style="width:5%; text-align:left;">
+      <img src="State_emblem_of_Pakistan.png" height="30">
+    </td>
+    <td style="width:60%; text-align:center;">
+      <div style="font-size:28px; font-weight:800; color:#0b6b3a;">
+        DAILY MEDIA ENERGY MONITOR
+      </div>
+      <div style="margin-top:8px; font-size:14px; font-weight:600; color:#1f6f3e;">
+        13 Jun - 15 June 2026
+      </div>
+    </td>
+    <td style="width:5%; text-align:right;">
+      <img src="MMS.png" height="30">
+    </td>
+  </tr>
+</table>
+
+<table style="
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
+    border:1px solid #333;
+">
+    <tr>
+            <td style="text-align:center; padding:10px; border:1px solid #333;">
+                <img src="file:///E:/repos/newsletter_email_automation/logos/br.png" style="height:45px; object-fit:contain;">
+            </td>
+            
+            <td style="text-align:center; padding:10px; border:1px solid #333;">
+                <img src="file:///E:/repos/newsletter_email_automation/logos/tribune.png" style="height:45px; object-fit:contain;">
+            </td>
+            
+            <td style="text-align:center; padding:10px; border:1px solid #333;">
+                <img src="file:///E:/repos/newsletter_email_automation/logos/dawn.png" style="height:45px; object-fit:contain;">
+            </td>
+            
+            <td style="text-align:center; padding:10px; border:1px solid #333;">
+                <img src="file:///E:/repos/newsletter_email_automation/logos/guardian.png" style="height:45px; object-fit:contain;">
+            </td>
+            
+            <td style="text-align:center; padding:10px; border:1px solid #333;">
+                <img src="file:///E:/repos/newsletter_email_automation/logos/propakistani.png" style="height:45px; object-fit:contain;">
+            </td>
+            
+            <td style="text-align:center; padding:10px; border:1px solid #333;">
+                <img src="file:///E:/repos/newsletter_email_automation/logos/Thenews-logo.png" style="height:45px; object-fit:contain;">
+            </td>
+            </tr><tr>
+            <td style="text-align:center; font-size:18px; font-weight:bold; color:#0b5394; padding:8px; border:1px solid #333;">
+                38
+            </td>
+            
+            <td style="text-align:center; font-size:18px; font-weight:bold; color:#0b5394; padding:8px; border:1px solid #333;">
+                24
+            </td>
+            
+            <td style="text-align:center; font-size:18px; font-weight:bold; color:#0b5394; padding:8px; border:1px solid #333;">
+                10
+            </td>
+            
+            <td style="text-align:center; font-size:18px; font-weight:bold; color:#0b5394; padding:8px; border:1px solid #333;">
+                5
+            </td>
+            
+            <td style="text-align:center; font-size:18px; font-weight:bold; color:#0b5394; padding:8px; border:1px solid #333;">
+                2
+            </td>
+            
+            <td style="text-align:center; font-size:18px; font-weight:bold; color:#0b5394; padding:8px; border:1px solid #333;">
+                1
+            </td>
+            </tr>
+</table>
+<table style="width:100%; ">
+    <tr>
+        <td style="width:50%; vertical-align:top; text-align:center;">
+            
+    <div style="text-align:center; width:100%; page-break-inside: avoid;">
+        <table style="width:100%; text-align:center;">
+            <tr>
+                <td><img src="file:///E:/repos/newsletter_email_automation/news_sentiment.png" width="350" height="300"></td>
+                <td><img src="file:///E:/repos/newsletter_email_automation/social_sentiment.png" width="350" height="300"></td>
+            </tr>
+        </table>
+    </div>
+    
+        </td>
+
+        <td style="width:50%; vertical-align:top; ">
+            
+        <div style="font-size:14px; line-height:1.6;">
+            <h1>Executive Summaries</h1>
+            <strong>15 June 2026:</strong><p>Pakistan’s 2026-27 budget prioritizes fiscal austerity and fossil fuel taxation—raising petroleum levies to Rs1.7T—over sustainable growth, renewables, or innovation, risking long-term economic resilience and deepening inequality. While aiming for 4% growth via tax relief and private credit, it faces political backlash and unrealistic targets, with infrastructure efforts like KP’s complaint centers and Mepco’s repairs overshadowing systemic reform. Debt, inflation, and political pressure strain implementation, while IMF-linked policies stall foreign projects and erode investor confidence. Despite solar’s 25% electricity share and EV growth, climate adaptation and renewables remain underfunded. The budget’s elite-centric focus, coupled with rising oil prices and climate shocks, underscores a fragile balance between stabilization, growth, and public expectations—critical for sustainable recovery.</p><br><strong>14 June 2026:</strong><p>Pakistan’s 2026-27 budget signals cautious fiscal recovery with tax relief, export incentives, and green energy initiatives like a USD15M solar plant in Punjab and GCC energy hub proposals, yet faces risks from unmet targets, weak implementation, and unresolved fiscal gaps. Despite 3.7% growth, structural issues—high energy costs, regulatory friction, and inequality—threaten resilience. Global shifts in energy and AI governance, including Hormuz reopening and U.S. export controls, complicate strategic positioning. Success hinges on translating policy into tangible, citizen-focused deliverables, overcoming governance hurdles, and aligning domestic reforms with global green and digital transitions—particularly through tax base expansion, infrastructure investment, and provincial fiscal federalism.</p><br><strong>13 June 2026:</strong><p>Pakistan’s 2026–27 budget prioritizes fiscal consolidation and short-term stabilization over structural transformation, cutting subsidies while boosting housing, exports, and SMEs. Despite targeting 4% GDP growth, it faces inflation, energy shortages, and grid gaps, with renewables and IPPs underfunded. Key moves include privatization, EV incentives, and LNG renegotiations, yet lack of FTR restoration, delayed pricing reforms, and unresolved circular debt undermine efficacy. While infrastructure and digital initiatives like 5G advance, institutional capacity and data-driven governance lag. The budget reflects cautious economic recalibration but risks unsustainable growth amid climate risks, inequality, and global tech shifts—without transformative reforms, long-term resilience and poverty reduction remain elusive.</p><br>
+        </div>
+        
+        </td>
+    </tr>
+</table>
+<div style="margin:20px 0;">
+
+<!-- ================= MAIN 70 / 30 LAYOUT ================= -->
+
+<table style="width:100%; border-spacing:20px;">
+
+<tr>
+
+<td style="width:100%; vertical-align:top;">
+
+<!-- ================= NEWS ================= -->
+
+<h2 style="color:#0b5e2e; border-bottom:2px solid #e6f4ec; padding-bottom:5px;">
+Key Energy Topics
+</h2>
+
+<!-- ===== TOPICS GRID ===== -->
+
+<table style="width:100%; border-spacing:15px;">
+
+<tr>
+
+<td style="background:#ffffff; padding:12px; border-top:5px solid #0b6b3a; border-radius:6px;">
+<h3 style="color:#0b6b3a; margin-top:0;">Net Metering</h3>
+<div style="font-size:13px;">
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.theguardian.com/environment/2026/jun/13/australia-fossil-fuel-exports-renewables-cop-chris-bowen" class="news-title">Australia can switch from fossil fuel exports to renewables, says next Cop president</a>
+                <p class="news-summary">...</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.theguardian.com/environment/2026/jun/13/australia-fossil-fuel-exports-renewables-cop-chris-bowen" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">The Guardian</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.dawn.com/news/2007728/navigating-the-hormuz-dilemma" class="news-title">Navigating the Hormuz dilemma - Newspaper - DAWN.COM</a>
+                <p class="news-summary">Geopolitical tensions over the Strait of Hormuz threaten GCC energy exports, sparking strategic diversification efforts. Pakistan proposes hosting GCC oil/gas reserves via Gwadar, offering a secure alternative to Hormuz. This could bolster regional energy resilience, deepen Pakistan-GCC ties, and generate economic benefits—though implementation faces governance hurdles....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.dawn.com/news/2007728/navigating-the-hormuz-dilemma" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Dawn</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2613162/exams-in-summers-an-ordeal-or-adventure" class="news-title">Exams in summers: an ordeal or adventure</a>
+                <p class="news-summary">Punjab’s HSSC exams face severe logistical and infrastructural challenges amid extreme heat, power shortages, and inadequate facilities. Proposals include shifting exams to spring, using private halls, and enhancing power/cooling infrastructure. Critics urge urgent interdepartmental coordination and funding to ensure fair, safe exams for students....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2613162/exams-in-summers-an-ordeal-or-adventure" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425275/hyderabad-may-emerge-as-climate-vulnerable-city-by-2030" class="news-title">‘Hyderabad may emerge as climate-vulnerable city by 2030’ - Pakistan - Business Recorder</a>
+                <p class="news-summary">Hyderabad faces escalating climate risks by 2030, with experts urging urgent action. While global temperatures rise, solar/wind energy growth offers a renewable solution. Prominent figures call for eco-friendly agriculture, tree planting, and public awareness to mitigate climate impacts and reduce fossil fuel dependence....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425275/hyderabad-may-emerge-as-climate-vulnerable-city-by-2030" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.dawn.com/news/2007461" class="news-title">BUDGET 2026-27: CPEC 2.0 only new project in Rs3.6tr development kitty - Newspaper - DAWN.COM</a>
+                <p class="news-summary">Pakistan’s 2026 budget allocates Rs3.675T, prioritizing transport, energy, and renewables—Rs1T for PSDP, Rs450B for SOEs, and Rs50B for solar/wind. Key projects include Dasu dams, K-IV water, and CPEC-II. Major allocations also go to AJK, GB, and tribal districts, with renewed focus on infrastructure, jobs, and digital education....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.dawn.com/news/2007461" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Dawn</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2612871/a-forward-looking-budget" class="news-title">A forward-looking budget</a>
+                <p class="news-summary">Pakistan’s FY2026-27 budget prioritizes debt, defense, and subsidies, with tax cuts and renewables-linked reforms. Economic growth projected at 4%, amid inflation and tax shortfalls. Global integration boosts remittances and bond markets. Key moves include contraceptive tax abolition, property relief, and provincial fiscal pact — though education, health, and key sectors remain underfunded....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2612871/a-forward-looking-budget" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2613003/saved-by-the-budget" class="news-title">Saved by the Budget?</a>
+                <p class="news-summary">Pakistan’s 2026-27 budget, despite bureaucratic clichés, signals a rare fiscal turnaround, sparking political relief. Yet, underlying challenges persist: widening reform gaps, unclear governance identity, and policy ambiguity. Success hinges on translating budget promises into tangible, citizen-focused deliverables—or risk reverting to political stagnation....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2613003/saved-by-the-budget" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2613213/economy-sparks-verbal-duel-in-na" class="news-title">Economy sparks verbal duel in NA</a>
+                <p class="news-summary">Pakistan’s government defends its budget as a recovery roadmap, citing tax relief, inflation control, and IMF engagement, while opposition criticizes it as elite-centric and ineffective, highlighting farmer losses, corporate exodus, and unmet relief. Renewables not mentioned; focus remains on fiscal policy, tax reform, and political debate....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2613213/economy-sparks-verbal-duel-in-na" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.theguardian.com/business/2026/jun/15/oil-prices-fall-strait-of-hormuz-reopening-hopes-iran-us-peace-deal" class="news-title">Oil prices tumble amid hopes strait of Hormuz will soon reopen</a>
+                <p class="news-summary">...</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.theguardian.com/business/2026/jun/15/oil-prices-fall-strait-of-hormuz-reopening-hopes-iran-us-peace-deal" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">The Guardian</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            </div>
+</td>
+
+<td style="background:#ffffff; padding:12px; border-top:5px solid #1f6f3e; border-radius:6px;">
+<h3 style="color:#1f6f3e; margin-top:0;">Solarization</h3>
+<div style="font-size:13px;">
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2612932/several-projects-planned-for-sustainable-energy" class="news-title">Several projects planned for sustainable energy</a>
+                <p class="news-summary">Pakistan plans to expand strategic oil reserves to 30–45 days, upgrade refineries, and shift fuel transport to pipelines. It aims for 30% renewables by 2030, with Rs151B public investment, 3,787MW new clean capacity, and 500kV transmission upgrades. Renewables, BESS, and Statcom integration are key to energy security and sustainability....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2612932/several-projects-planned-for-sustainable-energy" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2613188/energy-shock-revives-solar-ev-push" class="news-title">Energy shock revives solar, EV push</a>
+                <p class="news-summary">Pakistan faces rising fuel prices and inflation (11.7% YoY), driven by global energy volatility and heavy reliance on Gulf imports. Consumers are turning to solar and EVs, with rooftop solar now supplying 25% of electricity. EV adoption is growing, aided by Chinese partnerships. The government seeks to stabilize the economy, while renewables offer long-term energy security and economic resilience....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2613188/energy-shock-revives-solar-ev-push" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.dawn.com/news/2007188/a-difficult-story" class="news-title">A difficult story - Newspaper - DAWN.COM</a>
+                <p class="news-summary">Pakistan’s economy rebounded to 3.7% growth in 2026, aided by IMF policies and fragile recovery, but remains stuck in productivity stagnation. High energy costs, weak investment, and regulatory friction deter growth. While agriculture and services expanded, reliance on imports and low domestic investment signal structural vulnerabilities, risking future IMF bailouts unless productivity-driven reforms take hold....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.dawn.com/news/2007188/a-difficult-story" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Dawn</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425398/chinese-co-announces-investment" class="news-title">Chinese co announces investment - Business &amp; Finance - Business Recorder</a>
+                <p class="news-summary">Punjab, Pakistan, welcomes a USD15M solar investment from DOART-ROCKCORE, set to establish a solar panel manufacturing plant in a SEZ. The project aims to create 1,500 jobs and boost renewables. This marks a key step in Pakistan’s push for clean energy development through private-sector partnerships....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425398/chinese-co-announces-investment" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.theguardian.com/world/live/2026/jun/15/iran-us-peace-deal-live-updates-trump-israel-lebanon-hormuz-nuclear-program-europe-response" class="news-title">Middle East crisis live: US and Iran reach peace deal as European leaders warn Tehran ‘must never acquire a nuclear weapon’</a>
+                <p class="news-summary">...</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.theguardian.com/world/live/2026/jun/15/iran-us-peace-deal-live-updates-trump-israel-lebanon-hormuz-nuclear-program-europe-response" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">The Guardian</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            </div>
+</td>
+
+<td style="background:#ffffff; padding:12px; border-top:5px solid #2e7d4f; border-radius:6px;">
+<h3 style="color:#2e7d4f; margin-top:0;">Privatisation</h3>
+<div style="font-size:13px;">
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425327/rs1605bn-sell-off-target-set" class="news-title">Rs160.5bn sell-off target set - Business &amp; Finance - Business Recorder</a>
+                <p class="news-summary">Pakistan targets Rs 160.5B privatization in FY2026-27, accelerating SOE sales including PIA, DISCOs, and banks. Key approvals include PIA’s legal conversion, EOI issuance for power utilities, and financial closes for First Women Bank, ZTBL, and Roosevelt Hotel — signaling strong government push for private sector integration and financial restructuring....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425327/rs1605bn-sell-off-target-set" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425385/budget-fy27-pbc-welcomes-several-growth-oriented-steps" class="news-title">Budget FY27: PBC welcomes several growth-oriented steps - Business &amp; Finance - Business Recorder</a>
+                <p class="news-summary">Pakistan’s Federal Budget 2026-27 signals a shift toward sustainable growth, with PBC endorsing tax relief, export incentives, and reforms. Key calls include accelerating energy sector reforms, privatizing loss-making enterprises, and broadening the tax base. Success hinges on policy continuity, implementation, and private-sector-government collaboration to drive long-term economic resilience and investment....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425385/budget-fy27-pbc-welcomes-several-growth-oriented-steps" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425563/pba-hails-growth-focussed-federal-budget" class="news-title">PBA hails ‘growth-focussed’ federal budget - Business Recorder</a>
+                <p class="news-summary">Pakistan’s 2026-27 Budget prioritizes sustainable growth over crisis management, with fiscal discipline, tax relief, and sectoral incentives. Banks are poised to expand private credit, especially to SMEs, housing, and exports. Key achievements include circular debt restructuring, export financing cuts, and digital financial inclusion, all supporting a 4% growth target amid rising confidence....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425563/pba-hails-growth-focussed-federal-budget" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2612924/reforms-drive-rs143b-in-power-subsidy-savings" class="news-title">Reforms drive Rs143b in power subsidy savings</a>
+                <p class="news-summary">Pakistan’s Finance Minister announces major energy reforms for 2026-27, aiming for self-sufficiency and affordability. Key moves include power sector restructuring, a new competitive electricity market (CTBCM), Rs3.7T savings via IPPs, and a Direct Subsidy Mechanism. Subsidy cuts exceed Rs143B, reducing reliance on sovereign guarantees. Renewables and market-based procurement are central to long-term sustainability....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2612924/reforms-drive-rs143b-in-power-subsidy-savings" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425548/privatization-must-create-markets-not-new-oligarchs" class="news-title">Privatization must create markets, not new oligarchs - Opinion - Business Recorder</a>
+                <p class="news-summary">Pakistan must prioritize market-driven privatization through stock market listings to broaden ownership, enhance governance, and reduce elite capture. Success hinges on meaningful public float, contestable control, and unbundling monopolies—avoiding insider capitalism and ensuring privatization fosters competition, not concentration of power....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425548/privatization-must-create-markets-not-new-oligarchs" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            </div>
+</td>
+
+</tr>
+
+<tr>
+
+<td style="background:#ffffff; padding:12px; border-top:5px solid #0b6b3a; border-radius:6px;">
+<h3 style="color:#0b6b3a; margin-top:0;">Tariff Hikes</h3>
+<div style="font-size:13px;">
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425257/the-budget" class="news-title">The Budget - Editorials - Business Recorder</a>
+                <p class="news-summary">Pakistan’s 2026-27 budget prioritizes tariff cuts, tax simplification, and fiscal consolidation, with provinces contributing 1.79T rupees to reduce deficit. Renewables not mentioned; remittances buoy the economy but lack export-led growth. Structural reforms urged amid weak industrial capacity, high debt, and inflation risks....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425257/the-budget" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://propakistani.pk/2026/06/13/no-new-tax-on-solar-panels-chairman-fbr/" class="news-title">No New Tax on Solar Panels: Chairman FBR</a>
+                <p class="news-summary">Pakistan’s FBR confirms no new solar panel taxes, citing solar adoption as a cost-shield for consumers. Budget 2026-27 focuses on enforcement-driven revenue growth, including 5% tax on social media income, reduced auto taxes for &lt;2000cc engines, and higher e-cigarette duties. Targeted tax collection aims to boost Rs15.264T revenue via compliance, not new levies....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://propakistani.pk/2026/06/13/no-new-tax-on-solar-panels-chairman-fbr/" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">ProPakistani</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2613186/a-holding-operation-not-a-growth-budget" class="news-title">A holding operation, not a growth budget</a>
+                <p class="news-summary">Pakistan’s FY2026-27 budget prioritizes fiscal consolidation over growth, relying on IMF compliance, revenue targets, and debt servicing. While tax reforms and social protections are introduced, development spending remains constrained. Renewables and climate action are underfunded, and provincial fiscal autonomy is lacking. The budget offers short-term stability but lacks transformative policies to boost productivity or competitiveness....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2613186/a-holding-operation-not-a-growth-budget" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2613187/failing-to-break-imf-cycle" class="news-title">Failing to break IMF cycle</a>
+                <p class="news-summary">Pakistan’s IMF-supported programme has stabilized inflation, reserves, and fiscal discipline, but faces challenges in debt sustainability, energy sector reform, and export growth. Renewables and efficiency gains are key, yet high tariffs, subsidy cuts, and weak investment climate hinder progress. Economic recovery hinges on structural reforms, export diversification, and investor confidence....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2613187/failing-to-break-imf-cycle" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2613189/extractive-state-death-of-growth" class="news-title">Extractive state &amp; death of growth</a>
+                <p class="news-summary">Pakistan’s 2026-27 budget reflects extractive fiscal policies, escalating compliance costs, and tax burdens that stifle investment. Despite improved macroeconomic indicators, productivity, employment, and public services lag. Renewables and innovation are sidelined as revenue extraction prioritizes debt servicing over growth, risking long-term economic sustainability....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2613189/extractive-state-death-of-growth" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425258/budget-annual-ritual-of-fiscal-survival" class="news-title">Budget: annual ritual of fiscal survival - Opinion - Business Recorder</a>
+                <p class="news-summary">Pakistan’s budget prioritizes fiscal survival over long-term strategy, sidelining strategic planning and data-driven governance. While IMF pressures drive short-term adjustments, the lack of a coherent national vision undermines economic growth, investment, and institutional capacity—hindering transformational progress in renewables, industry, and development....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425258/budget-annual-ritual-of-fiscal-survival" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425315/federal-budget-nothing-for-exporters-nothing-for-karachi-kcci" class="news-title">Federal Budget: Nothing for exporters, nothing for Karachi: KCCI - Business &amp; Finance - Business Recorder</a>
+                <p class="news-summary">Federal budget 2026-27 ignores key business demands, including export incentives, energy cost cuts, and Karachi infrastructure. Critics highlight lack of tax reform, circular debt solutions, and water project funding, while acknowledging minor positives like EV import duty and digital tax reforms. Business community urges cautious optimism pending Finance Bill....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425315/federal-budget-nothing-for-exporters-nothing-for-karachi-kcci" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425524/bmp-questions-ambitious-tax-collection-target" class="news-title">BMP questions ‘ambitious’ tax collection target - Pakistan - Business Recorder</a>
+                <p class="news-summary">Pakistan’s business community warns that ambitious fiscal targets may rely on further fuel and energy levies, risking inflation and industrial growth. Critics urge tax base expansion and economic stimulation over indirect tax hikes, stressing that sustainable revenue growth requires structural reforms, not cost-driven policies....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425524/bmp-questions-ambitious-tax-collection-target" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425565/fpcci-objects-to-uniform-uosc-formula" class="news-title">FPCCI objects to uniform UoSC formula - Business Recorder</a>
+                <p class="news-summary">FPCCI opposes Pakistan’s proposed UoSC formula, citing unfeasible pricing, illegal DSS, and cross-subsidies, contradicting government policy. It warns of investor uncertainty and stalled projects, urging NEPRA to revise before final approval—key for industrial viability and renewables investment....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425565/fpcci-objects-to-uniform-uosc-formula" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.dawn.com/news/2007487" class="news-title">A treatise on political priorities and constraints - Newspaper - DAWN.COM</a>
+                <p class="news-summary">Pakistan’s FY27 budget marks a shift from crisis management to cautious growth, offering tax relief for workers and businesses while maintaining IMF compliance. Real estate-driven growth is expected, but structural reforms, energy costs, and productivity remain unaddressed. While IMF targets are met, analysts warn the budget is modest, not transformative, and unlikely to significantly reduce poverty or boost exports....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.dawn.com/news/2007487" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Dawn</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2612931/govt-gives-rs360b-in-relief-rs306b-in-new-taxes" class="news-title">Govt gives Rs360b in relief, Rs306b in new taxes</a>
+                <p class="news-summary">Pakistan’s government targets Rs17T in tax revenue via new levies, exemptions, and tariff reforms, including EV taxes, social media income tax, and real estate relief. Key moves aim to boost economy, attract investment, and meet IMF-linked fiscal targets—while advancing renewables via EV incentives and export tax cuts....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2612931/govt-gives-rs360b-in-relief-rs306b-in-new-taxes" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2612936/budget-lacks-export-push-growth-strategy" class="news-title">&#x27;Budget lacks export push, growth strategy&#x27;</a>
+                <p class="news-summary">Pakistan’s 2026-27 budget prioritizes fiscal restraint and export incentives, cutting super tax for mid-income earners and lowering export withholding rates. Yet, critics highlight policy gaps in formalization, energy pricing, and industrial support, with renewables and exports underdeveloped. Revenue targets face skepticism amid informal economy growth and lack of structural reforms....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2612936/budget-lacks-export-push-growth-strategy" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2612938/inflation-shielding-subsidy-budget-axed-by-8" class="news-title">Inflation-shielding subsidy budget axed by 8%</a>
+                <p class="news-summary">Pakistan’s 2026-27 budget slashes subsidies by 8% amid inflation concerns, prioritizing poor protection. Renewables and IPPs see no funding, while energy sector subsidies are cut, except for K-Electric and AJK. Fertilizer, EV, and SME subsidies are reduced, but housing and export refinance schemes receive boosts. Circular debt control and gas schemes are scaled back....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2612938/inflation-shielding-subsidy-budget-axed-by-8" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2613053/industry-welcomes-tax-relief-decries-neglect-of-energy-smes" class="news-title">Industry welcomes tax relief, decries neglect of energy, SMEs</a>
+                <p class="news-summary">Hyderabad businesses criticize federal budget 2026-27 for lacking energy sector reforms, failing to address high energy costs, gas shortages, and industrial infrastructure gaps. While tax relief is welcomed, SMEs and small industries feel neglected, and industrial revival remains hindered by debt, unstable costs, and insufficient policy support for production and exports....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2613053/industry-welcomes-tax-relief-decries-neglect-of-energy-smes" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2613198/opp-claims-budget-to-deepen-crisis" class="news-title">Opp claims budget to deepen crisis</a>
+                <p class="news-summary">Pakistan’s federal budget faces fierce opposition, with critics blaming fiscal mismanagement and rising debt for worsening economic conditions. Opposition parties accuse the government of failing to address poverty, unemployment, and service deficits, urging reforms and demanding cuts to petroleum levies and industrial tariffs. Public debt has surged nearly 100% in four years, raising concerns over long-term stability....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2613198/opp-claims-budget-to-deepen-crisis" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425282/businesses-say-its-a-balanced-budget-but-lacks-exports-revival-vision" class="news-title">Businesses say it’s a balanced budget but lacks exports revival vision - Business &amp; Finance - Business Recorder</a>
+                <p class="news-summary">Pakistan’s 2026-27 budget offers partial relief but falls short on industrial revival, export competitiveness, and renewables. Key omissions include no FTR restoration, delayed energy pricing reforms, and unaddressed GST refunds. Exporters and manufacturers express frustration over high taxes, uncompetitive energy costs, and lack of targeted incentives, urging urgent legislative amendments....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425282/businesses-say-its-a-balanced-budget-but-lacks-exports-revival-vision" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425332/power-subsidy-cut-19pc-to-rs830bn" class="news-title">Power subsidy cut 19pc to Rs830bn - Business Recorder</a>
+                <p class="news-summary">Pakistan’s FY2026-27 budget cuts power subsidies by 8% overall, boosts K-Electric and IPPs via PERA, and allocates Rs252B for circular debt. Renewables/energy initiatives grow, with major increases in markup subsidies and EV incentives. No IPP payments for 2026-27 despite prior commitments, signaling fiscal restraint amid energy and agricultural support adjustments....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425332/power-subsidy-cut-19pc-to-rs830bn" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425352/budget-fy27-govt-tries-to-make-sure-imf-stays-in-good-humour" class="news-title">Budget FY27: Govt tries to make sure IMF stays in good humour - Business Recorder</a>
+                <p class="news-summary">Pakistan’s 2026-27 budget targets 4% GDP growth, with fiscal deficit at 3.6% of GDP. Key moves include tax relief for salaried, exporters, and real estate; renewables incentives for EVs; LNG renegotiations; and direct subsidy models. Provinces receive expanded transfers; defense, infrastructure, and energy projects are prioritized. Renewables and exports gain focus amid IMF compliance and economic transformation goals....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425352/budget-fy27-govt-tries-to-make-sure-imf-stays-in-good-humour" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425389/budget-fails-to-meet-real-economic-needs-hsati" class="news-title">Budget fails to meet real economic needs: HSATI - Business &amp; Finance - Business Recorder</a>
+                <p class="news-summary">Hyderabad industrial leaders criticize Pakistan’s 2026-27 budget for lacking energy price cuts, infrastructure investment, and structural reforms. While some tax and tariff relief is noted, they demand urgent action to revive industry, boost SMEs, and reduce energy costs—highlighting persistent infrastructure gaps and fiscal dependency as major hurdles to economic growth....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425389/budget-fails-to-meet-real-economic-needs-hsati" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425414/pbf-voices-its-concerns-over-several-key-aspects-of-budget" class="news-title">PBF voices its concerns over several key aspects of budget - Business &amp; Finance - Business Recorder</a>
+                <p class="news-summary">Pakistan’s Federal Budget 2026-27 faces criticism from the PBF for lacking industrial, agricultural, and export incentives, while raising petroleum levies and ignoring energy tariffs. Positive steps include Super Tax abolition for small businesses, but concerns persist over cash economy growth, tax burdens, cotton import risks, and underfunded agriculture—hindering economic revival and competitiveness....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425414/pbf-voices-its-concerns-over-several-key-aspects-of-budget" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425500/growth-expectations-and-the-inflation-target" class="news-title">Growth, expectations, and the inflation target - BR Research - Business Recorder</a>
+                <p class="news-summary">Federal budget shifts from stabilization to growth amid rising economic pressures. Monetary conditions are easing, broad money growth is accelerating, and inflation expectations risk becoming unanchored. Policymakers face the challenge of balancing growth, political demands, and inflation control—especially as economic agents anticipate persistent inflation despite policy restraint....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425500/growth-expectations-and-the-inflation-target" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425543/policy-contradictions-stall-progress" class="news-title">Policy contradictions stall progress - Editorials - Business Recorder</a>
+                <p class="news-summary">Pakistan’s energy and digital policies face contradictions: renewable energy goals are undermined by punitive tariffs and industrial tariff reforms favoring fossil fuels. Heavy mobile taxation hinders digital inclusion, while siloed policymaking undermines climate resilience and economic transformation, despite ambitious national ambitions....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425543/policy-contradictions-stall-progress" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425546/federal-budget-gives-with-one-hand-takes-away-with-the-other" class="news-title">Federal budget: gives with one hand; takes away with the other - Opinion - Business Recorder</a>
+                <p class="news-summary">Pakistan’s FY27 budget offers limited relief to affluent groups, masking structural fiscal imbalances. While it avoids spending cuts, it relies on unmet revenue targets and provincial cooperation. Renewables and investment are absent. Petroleum levies may rise, burdening the poor. IMF pressure looms, risking inflation and renewed tax coercion....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425546/federal-budget-gives-with-one-hand-takes-away-with-the-other" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.dawn.com/news/2007504" class="news-title">Sustainable path? - Newspaper - DAWN.COM</a>
+                <p class="news-summary">Pakistan’s FY27 budget signals a shift from stabilization to growth, with tax cuts, real estate stimulus, and export incentives. However, reliance on real estate as a growth engine risks short-term booms and inflation. Fiscal consolidation via provincial revenue extraction and high deficit targets raise sustainability concerns, with energy reform and regulatory overhaul looming as critical next steps....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.dawn.com/news/2007504" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Dawn</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.theguardian.com/commentisfree/2026/jun/15/europe-us-big-tech-silicon-valley-european-commission" class="news-title">Europe is starting to break up with US big tech. But it’s still abiding by the Silicon Valley rulebook | Max von Thun</a>
+                <p class="news-summary">...</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.theguardian.com/commentisfree/2026/jun/15/europe-us-big-tech-silicon-valley-european-commission" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">The Guardian</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2612906/rs110m-fuuast-solar-project-hit-by-technical-setbacks" class="news-title">Rs110m FUUAST solar project hit by technical setbacks</a>
+                <p class="news-summary">A Rs110M solar project at FUUAST in Karachi, funded by HEC, failed to meet targets due to grid connection delays, lack of battery storage, and poor installation. Despite 1.05MWp capacity, only 40-50% is operational, with no bill savings. Concerns over public funding misuse and technical flaws persist....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2612906/rs110m-fuuast-solar-project-hit-by-technical-setbacks" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2613026/na-body-stresses-need-for-reforms" class="news-title">NA body stresses need for reforms</a>
+                <p class="news-summary">Pakistan’s National Assembly highlights budget’s limited impact on structural reforms, urging broader tax base expansion, debt management, and investment promotion to sustain growth. Financial experts presented post-budget analysis, reinforcing calls for deeper economic reforms beyond incremental adjustments....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2613026/na-body-stresses-need-for-reforms" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2613246/under-war-clouds-revenues-falter-debt-costs-rise" class="news-title">Under war clouds, revenues falter, debt costs rise</a>
+                <p class="news-summary">Pakistan’s fiscal crisis deepens amid rising costs, revenue shortfalls, and weak enforcement, with energy prices soaring and renewables lagging. Structural reforms, tax base expansion, and expenditure rationalization are urgently needed to avoid deeper debt, inflation, and investor flight....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2613246/under-war-clouds-revenues-falter-debt-costs-rise" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425176/disgruntled-salaried-group-gets-some-relief-as-aurangzeb-announces-fy27-budget" class="news-title">Disgruntled salaried group gets some relief as Aurangzeb announces FY27 budget - Pakistan - Business Recorder</a>
+                <p class="news-summary">Pakistan’s 2026-27 budget targets 4% GDP growth amid inflation of 8.2%, with tax relief for salaried, construction, and IT sectors. Defence spending rises, renewables (hydro) and climate resilience get funding. Energy import costs loom amid Middle East tensions. IMF-supported fiscal discipline continues, with renewables, digital tools, and sectoral boosts aimed at sustainable growth....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425176/disgruntled-salaried-group-gets-some-relief-as-aurangzeb-announces-fy27-budget" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425348/tax-on-export-proceeds-to-go-down-to-125pc" class="news-title">Tax on export proceeds to go down to 1.25pc - Business Recorder</a>
+                <p class="news-summary">Pakistan’s Finance Bill 2026 reduces export tax burden to 1.25%, extends IT export incentives, and proposes lowering export threshold to 10% to boost industrial utilization. It also advocates for uniform refunds, recycling tax reform, and regulatory support to enhance exports, renewables, and import substitution—aligning with SDG goals and global economic opportunities....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425348/tax-on-export-proceeds-to-go-down-to-125pc" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425411/policy-philosophy-correction-budget-needed-ii" class="news-title">Policy philosophy correction budget needed—II - Opinion - Business Recorder</a>
+                <p class="news-summary">Government must adopt a non-austerity, mission-oriented budget to accelerate green energy transition, reduce inequality, and boost resilience. Key moves: tax reform, targeted subsidies, infrastructure investment, and fiscal federalism realignment—prioritizing supply-side reforms and green energy over austerity, to drive inclusive growth and economic stability....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425411/policy-philosophy-correction-budget-needed-ii" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425501/petroleum-levy-target-looks-easily-achievable" class="news-title">Petroleum Levy target looks easily achievable - BR Research - Business Recorder</a>
+                <p class="news-summary">Pakistan’s FY27 budget boosts petroleum levies to Rs1.7T, targeting ~Rs100/litre effective, with CSL unchanged. Fossil fuel taxation remains central to fiscal revenue, despite risks from volatility, substitution, and geopolitical tensions. Renewables not mentioned; fiscal reliance on fuel levies grows, raising vulnerability....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425501/petroleum-levy-target-looks-easily-achievable" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425529/debt-servicing-leaves-development-priorities-in-the-lurch-pdp" class="news-title">Debt servicing leaves development priorities in the lurch: PDP - Pakistan - Business Recorder</a>
+                <p class="news-summary">Pakistan’s escalating debt burden—now exceeding Rs75 trillion—diverts nearly half its budget to servicing, stifling investments in education, health, and renewables. Experts warn of a human development crisis, urging fiscal discipline, domestic revenue growth, and strategic investment in sectors like renewables and blue economy to break the debt cycle....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425529/debt-servicing-leaves-development-priorities-in-the-lurch-pdp" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425545/budget-fy27" class="news-title">Budget FY27 - Opinion - Business Recorder</a>
+                <p class="news-summary">Pakistan’s 2026-27 budget retains fiscal austerity, delays devolution, and relies on external borrowing and sales taxes—raising inflation, slowing growth, and deepening inequality. Revenue targets are unrealistic, development spending stagnant, and IMF conditions tighten macroeconomic constraints, risking further economic contraction....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425545/budget-fy27" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425547/debt-discipline-amp-rentier-state" class="news-title">Debt, discipline &amp; rentier state - Opinion - Business Recorder</a>
+                <p class="news-summary">Pakistan’s fiscal crisis stems from debt-funded consumption, rentierism, and weak productivity. The article urges a shift to disciplined borrowing for assets, taxing rent over work, ending hidden expenditures, restoring federalism, and prioritizing production over survival—rejecting IMF austerity in favor of sovereign, productive recovery....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425547/debt-discipline-amp-rentier-state" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.dawn.com/news/2007184/pakistans-ai-checklist" class="news-title">Pakistan’s AI checklist - Newspaper - DAWN.COM</a>
+                <p class="news-summary">Pakistan’s AI ambitions hinge on sovereign energy, compute infrastructure, and data governance. The country must prioritize solar-powered data centers, local AI talent, and a pending data protection law—avoiding reliance on foreign chips and models. Fiscal decisions in FY2026-27 will determine if AI becomes real infrastructure or remains speculative....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.dawn.com/news/2007184/pakistans-ai-checklist" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Dawn</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.dawn.com/news/2007283/govt-unveils-rs188tr-budget-for-fy2026-27-gdp-growth-targeted-at-4pc" class="news-title">Govt unveils Rs18.8tr budget for FY2026-27; GDP growth targeted at 4pc - Business - DAWN.COM</a>
+                <p class="news-summary">Pakistan’s FY2026-27 budget targets 4% GDP growth and 8.2% inflation, with tax cuts, subsidies, and defense spending. Renewables and AI are prioritized; defense and exports gain emphasis. Provinces receive more funds via federal grants. Opposition protests disrupt proceedings, while PPP demands water rights and political space....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.dawn.com/news/2007283/govt-unveils-rs188tr-budget-for-fy2026-27-gdp-growth-targeted-at-4pc" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Dawn</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.dawn.com/news/2007935" class="news-title">BUDGET 2026-27 : Multiple risks looms over next-year budget, finance ministry warns - Newspaper - DAWN.COM</a>
+                <p class="news-summary">Oil price hikes ($40/barrel) risk adding 0.8pc to deficit; natural disasters threaten 1.5pc fiscal hit. Tax shortfalls, state entity losses, and climate risks further strain finances. Government seeks fiscal discipline via risk mitigation, amid rising debt, subsidy pressures, and weak GDP growth. Renewables and green infrastructure add modest deficit costs....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.dawn.com/news/2007935" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Dawn</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            </div>
+</td>
+
+<td style="background:#ffffff; padding:12px; border-top:5px solid #1f6f3e; border-radius:6px;">
+<h3 style="color:#1f6f3e; margin-top:0;">Fuel Price Adjustment</h3>
+<div style="font-size:13px;">
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425316/small-traders-welcome-1pc-fixed-tax" class="news-title">Small traders welcome 1pc fixed tax - Business &amp; Finance - Business Recorder</a>
+                <p class="news-summary">Pakistan’s federal government proposes a 1% fixed tax for 2026–27, welcomed by small traders, but faces criticism over unrelieved fuel and electricity tariffs. Traders urge concessions for grassroots industries and support faceless audits to improve compliance and reduce bureaucratic hurdles....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425316/small-traders-welcome-1pc-fixed-tax" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425452/pd-imf-discuss-gas-sector-circular-debt-settlement-plan" class="news-title">PD, IMF discuss gas sector circular debt settlement plan - Business Recorder</a>
+                <p class="news-summary">Pakistan’s Petroleum Division seeks IMF-backed resolution of its Rs3.4T gas sector circular debt, targeting inefficiencies, UFG losses, and tariff distortions. Reforms aim to incentivize upstream investment, improve governance, and reduce reliance on imported LNG. Implementation hinges on IMF approval and Cabinet endorsement, with success critical for energy stability and fiscal discipline....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425452/pd-imf-discuss-gas-sector-circular-debt-settlement-plan" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2612874/let-them-have-their-fun" class="news-title">Let them have their fun</a>
+                <p class="news-summary">Global energy markets are overshadowed by tech monopolies, AI-driven financial manipulation, and rising wealth inequality. Renewables face political and economic headwinds as state power struggles with oligarchic influence. Governments’ budgetary moves are minor compared to systemic shifts in capital returns, signaling a future where economic control is increasingly algorithmic, not geopolitical....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2612874/let-them-have-their-fun" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425544/the-price-of-delay" class="news-title">The price of delay - Editorials - Business Recorder</a>
+                <p class="news-summary">Pakistan’s foreign-funded infrastructure projects face delays due to federal government failures in providing timely rupee cover, undermining efficiency and credibility. Persistent bureaucratic bottlenecks, despite committee efforts, risk cost escalations and erode public trust. Transparency and institutional reform are urgently needed to ensure foreign financing translates into tangible outcomes....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425544/the-price-of-delay" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            </div>
+</td>
+
+<td style="background:#ffffff; padding:12px; border-top:5px solid #1f6f3e; border-radius:6px;">
+<h3 style="color:#d9534f; margin-top:0;">Load Shedding</h3>
+<div style="font-size:13px;">
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425506/na-witnesses-heated-debate-on-budget" class="news-title">NA witnesses heated debate on budget - Pakistan - Business Recorder</a>
+                <p class="news-summary">Pakistan’s 2026-27 budget sparks fierce political debate, with opposition accusing the government of economic mismanagement and rising costs, while treasury defends growth, inflation control, and fiscal reforms. Renewables and power reliability remain contentious, with critics highlighting persistent load-shedding and unmet consumer relief amid rising petroleum and electricity prices....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425506/na-witnesses-heated-debate-on-budget" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.thenews.pk/story/1420434-us-iran-peace-deal-likely-to-be-signed-within-24-hours-pm-shehbaz" class="news-title">US-Iran peace deal likely to be signed within 24 hours: PM Shehbaz</a>
+                <p class="news-summary">Middle East war nears resolution as US-Iran prepares to sign peace deal, reopening Hormuz and lifting sanctions. Pakistan mediates; Iran seeks uranium retention, US demands dismantling. Energy prices may ease. Financial and diplomatic shifts expected, with nuclear talks to follow....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.thenews.pk/story/1420434-us-iran-peace-deal-likely-to-be-signed-within-24-hours-pm-shehbaz" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">The News</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            </div>
+</td>
+
+</tr>
+
+</table>
+
+<br>
+
+<!-- ================= MISC ================= -->
+
+<table>
+<tr>
+<td class="card" style="border-top: 6px solid #0b6b3a;">
+<h3 style="color:#0b6b3a;">Misc</h3>
+
+
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://propakistani.pk/2026/06/13/business-community-welcomes-new-budget-but-warns-high-tax-target-will-hurt-economy/" class="news-title">Business Community Welcomes New Budget But Warns High Tax Target Will Hurt Economy</a>
+                <p class="news-summary">Pakistan’s 2026-27 budget signals macroeconomic stabilization but faces criticism for aggressive revenue targets and energy cost pressures. Renewables and EVs are gaining traction via policy, yet gaps in tax reform, export incentives, and industrial growth hinder long-term sustainability. Business groups urge a shift toward investment-led, export-driven, and productivity-focused growth....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://propakistani.pk/2026/06/13/business-community-welcomes-new-budget-but-warns-high-tax-target-will-hurt-economy/" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">ProPakistani</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2612891/punjab-govt-drafts-landmark-ai-protection-law-for-artists" class="news-title">Punjab govt drafts landmark AI protection law for artists</a>
+                <p class="news-summary">Punjab, Pakistan proposes landmark AI legislation to protect artists’ digital identities, mandating consent, disclosure, and penalties for misuse. Artists warn of exploitative contracts, urging vigilance. While focused on IP rights, the move reflects broader concerns over AI’s impact on creative industries and human agency in digital content production....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2612891/punjab-govt-drafts-landmark-ai-protection-law-for-artists" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2612921/it-exports-projected-to-reach-45b" class="news-title">IT exports projected to reach $4.5b</a>
+                <p class="news-summary">Pakistan’s IT exports surged over 20% annually, projected to hit $4.5B, with the G-Spectrum auction enabling 5G rollout in five cities. The government highlights digital transformation as key to economic growth, boosting exports and infrastructure. No direct renewables or energy market updates mentioned....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2612921/it-exports-projected-to-reach-45b" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2612935/development-outlay-cut-despite-gdp-growth" class="news-title">Development outlay cut despite GDP growth</a>
+                <p class="news-summary">Pakistan’s federal government cuts its 2026-27 Public Sector Development Programme (PSDP) amid fiscal constraints, shifting focus to national strategic sectors like transport, energy, and infrastructure. Despite emphasis on growth via URAAN Pakistan, development spending remains low as debt, defence, and operations absorb most budgets. Renewables like hydropower projects continue, but fiscal discipline pressures social spending and equity....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2612935/development-outlay-cut-despite-gdp-growth" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2612955/anthropic-disables-top-tier-ai-models-after-us-order-limiting-foreign-access" class="news-title">Anthropic disables top-tier AI models after US order limiting foreign access</a>
+                <p class="news-summary">US government imposes export controls, banning foreign access to Anthropic’s Fable 5 and Mythos 5 AI models amid national security concerns. Anthropic disputes the justification, citing lack of evidence and potential industry-wide disruption. The move reflects escalating US efforts to restrict AI exports, impacting AI development and global tech dynamics....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2612955/anthropic-disables-top-tier-ai-models-after-us-order-limiting-foreign-access" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://tribune.com.pk/story/2613222/m-5-section-to-be-shut-for-8-hours-today-tomorrow" class="news-title">M-5 section to be shut for 8 hours today, tomorrow</a>
+                <p class="news-summary">Power repairs on M-5 Motorway’s transmission infrastructure by Mepco cause 8-hour traffic closures. Focus on grid maintenance, not renewables or financials. No broader energy market or policy impacts reported....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://tribune.com.pk/story/2613222/m-5-section-to-be-shut-for-8-hours-today-tomorrow" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Tribune</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425335/debt-servicing-to-devour-43pc-of-budget" class="news-title">Debt servicing to devour 43pc of budget - Business Recorder</a>
+                <p class="news-summary">Pakistan’s 2026-27 budget allocates Rs8.054 trillion for debt servicing (42.9% of total budget), reflecting rising public debt. Domestic and foreign servicing costs are revised downward. No major renewables or financial results highlighted; focus remains on fiscal burden and debt sustainability....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425335/debt-servicing-to-devour-43pc-of-budget" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425345/blatant-capitulation" class="news-title">Blatant capitulation - Opinion - Business Recorder</a>
+                <p class="news-summary">Pakistan’s 2025-26 budget prioritizes IMF compliance, raising taxes and borrowing while cutting provincial development funds. Renewables and IPPs face funding gaps, subsidies are scaled back, and fiscal deficit widens. Revenue targets are ambitious, compliance lags, and poverty alleviation remains inadequate despite minor pro-poor measures....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425345/blatant-capitulation" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425455/disaster-related-funding-hiked" class="news-title">Disaster-related funding hiked - Pakistan - Business Recorder</a>
+                <p class="news-summary">Pakistan’s 2026-27 budget cuts climate mitigation &amp; adaptation spending but boosts disaster preparedness, response, and recovery funding. It introduces a Rs50B Climate Levy and Rs476B in green subsidies, primarily in energy, agriculture, and transport, signaling a shift toward resilience over mitigation, amid rising climate risks and international adaptation efforts....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425455/disaster-related-funding-hiked" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425456/rs476bn-allocated-for-green-equipment" class="news-title">Rs476bn allocated for green equipment - Business Recorder</a>
+                <p class="news-summary">Pakistan’s federal budget allocates Rs476 billion for green subsidies, with Rs423 billion for energy, supporting clean tech and pollution reduction. Other sectors—agriculture, transport, food, and industry—receive targeted funding, aligning with national green initiatives to promote sustainable development....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425456/rs476bn-allocated-for-green-equipment" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425462/uk-japan-set-to-agree-24-billion-investment-tech-partnerships" class="news-title">UK, Japan set to agree $24 billion investment, tech partnerships - Markets - Business Recorder</a>
+                <p class="news-summary">UK-Japan pact worth £18B+ to boost offshore wind (5.9GW), AI, semiconductors, and quantum tech. Major firms like Hitachi Energy and Rolls-Royce to invest. Key ahead of G7 summit, aiming to create tens of thousands of jobs and advance renewables....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425462/uk-japan-set-to-agree-24-billion-investment-tech-partnerships" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425503/ji-chief-rejects-federal-budget" class="news-title">JI chief rejects federal budget - Pakistan - Business Recorder</a>
+                <p class="news-summary">Pakistan’s Jamaat-e-Islami rejects the budget as IMF-driven and anti-people, citing soaring debt (85T rupees) and Rs 800B annual interest. The party vows nationwide protests, including highway shutdowns, to pressure the government to relieve the populace amid economic hardship....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425503/ji-chief-rejects-federal-budget" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425504/petroleum-products-ordinance-senate-panel-opposes-amendments-thru-finance-bill" class="news-title">Petroleum Products Ordinance: Senate panel opposes amendments thru finance bill - Pakistan - Business Recorder</a>
+                <p class="news-summary">Pakistan’s Senate committee opposes amending the Petroleum Levy Ordinance as a money bill, urging its classification as a normal bill. Senators argue levies are non-progressive, not climate-focused, and should be converted to sales tax and included in divisible revenue. DG Oil details compliance and penalties for defaults. Renewables not mentioned....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425504/petroleum-products-ordinance-senate-panel-opposes-amendments-thru-finance-bill" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.brecorder.com/news/40425551/kp-to-make-federal-entities-responsible-to-public-at-all-costs" class="news-title">‘KP to make federal entities responsible to public at all costs’ - Pakistan - Business Recorder</a>
+                <p class="news-summary">KP’s Energy Minister prioritizes electricity service resolution, establishing one-window complaint centers to streamline consumer issues. The Inspectorate of Electricity, under provincial oversight, handles disputes, safety, and licensing, aiming to enhance efficiency and public trust within constitutional limits....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.brecorder.com/news/40425551/kp-to-make-federal-entities-responsible-to-public-at-all-costs" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Business Recorder</td>
+                    <td style="text-align:right; font-weight:bold; color:green;">Positive</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.dawn.com/news/2007731" class="news-title">Budget presser - Newspaper - DAWN.COM</a>
+                <p class="news-summary">Pakistan’s 2026 budget aims for growth amid relief measures, but faces fiscal risks from untested tax collection targets and unresolved tax base gaps. Key concessions benefit exporters and SMEs, yet lack structural reforms. Provincial fiscal pressures persist, and reliance on enforcement optimism to meet Rs15.3tr targets raises sustainability concerns....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.dawn.com/news/2007731" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Dawn</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.dawn.com/news/2007955" class="news-title">Climate choices - Newspaper - DAWN.COM</a>
+                <p class="news-summary">Pakistan faces escalating climate risks with record warm years in 2024–2025, prompting a Rs690bn climate budget. While green subsidies and resilience plans are announced, critics argue spending is insufficient and misaligned with urgent adaptation needs—floods, heatwaves, and water stress demand targeted infrastructure investments over emissions reduction alone....</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.dawn.com/news/2007955" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">Dawn</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; page-break-inside: avoid;">
+                <a href="https://www.theguardian.com/world/2026/jun/15/macron-evian-g7-agenda-summit-trump" class="news-title">Macron frames Évian G7 agenda in hope Trump will stay for whole summit</a>
+                <p class="news-summary">...</p>
+                <table style="width:100%; font-size:11px; margin-top:5px;">
+                  <tr>
+                    <td style="text-align:left;">
+                      <a href="https://www.theguardian.com/world/2026/jun/15/macron-evian-g7-agenda-summit-trump" style="color:#0b6b3a; font-weight:bold; text-decoration:none;">Read More →</a>
+                    </td>
+                    <td style="text-align:center; color:#999;">The Guardian</td>
+                    <td style="text-align:right; font-weight:bold; color:red;">Negative</td>
+                  </tr>
+                </table>
+            </div>
+            
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<!-- ================= SOCIAL MEDIA ================= -->
+
+<h2 style="color:#0b5e2e; border-bottom:2px solid #43a1df; padding-bottom:5px;">
+Social Media Insights
+</h2>
+
+<table style="width:100%; border-spacing:10px;">
+
+<tr>
+<td style="background:#e6f4ec; padding:12px; border:1px solid #ddd; border-radius:6px;">
+
+<table style="width:100%; border-collapse:collapse;">
+<tr>
+
+<td style="width:33%; vertical-align:top;">
+<p class='no-news'>--</p>
+</td>
+
+<td style="width:33%; vertical-align:top;">
+<p class='no-news'>--</p>
+</td>
+
+<td style="width:33%; vertical-align:top;">
+<p class='no-news'>--</p>
+</td>
+
+</tr>
+</table>
+
+</td>
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+<div class="footer">
+    
+    <b>Advanced Data Analytics</b><br> <br>
+    For Queries: power.post@ppmc.gov.pk
+</div>
+
+</body>
+</html>
