@@ -582,7 +582,7 @@ def email_report(to_emails, subject, body, pdf_path=None, use_bcc=True):
 # ================= SCHEDULER CONFIG =================
 # Monday=0, Tuesday=1, Wednesday=2, Thursday=3, Friday=4
 SCHEDULE_WEEKDAYS = {0, 2, 4}  # Monday, Wednesday, Friday
-SCHEDULE_HOUR = int(os.getenv("SCHEDULE_HOUR", 8))
+SCHEDULE_HOUR = int(os.getenv("SCHEDULE_HOUR", 12))
 SCHEDULE_MINUTE = int(os.getenv("SCHEDULE_MINUTE", 0))
 SCHEDULE_TIMEZONE = os.getenv("SCHEDULE_TIMEZONE", "Asia/Karachi")
 
