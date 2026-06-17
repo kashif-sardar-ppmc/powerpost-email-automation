@@ -732,9 +732,9 @@ def main(start_date_str=None, end_date_str=None):
         pdf_path = generate_pdf(html_content, start_date, end_date)
 
         # 4. Email body
-        email_body = """
+        email_body = f"""
         <p>Dear Team,</p>
-        <p>Please find attached the latest <strong>News letter</strong>. in case of any discrepency feel free to contact Advanced Analytics depoartment or write us to amad.atiq@ppmc.gov.pk</p> 
+        <p>Please find attached the latest <strong>News letter</strong> date {start_date.strftime('%d %b')} - {end_date.strftime('%d %B %Y')}. in case of any discrepency feel free to contact Advanced Analytics depoartment or write us to amad.atiq@ppmc.gov.pk</p> 
         <p>Regards,<br>PowerPost</p>
         """
 
@@ -745,7 +745,7 @@ def main(start_date_str=None, end_date_str=None):
         ]
 
         email_subject = (
-            f"Clubbed Media Energy Monitor Report "
+            f"Media Energy Monitor Report "
             f"({start_date.strftime('%d %b')} - {end_date.strftime('%d %B %Y')})"
         )
 
