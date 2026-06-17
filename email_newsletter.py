@@ -667,7 +667,7 @@ def parse_args():
     parser.add_argument(
         "--schedule",
         action="store_true",
-        help="Keep script running and send automatically on Monday, Wednesday, and Friday at 8:00 AM."
+        help="Keep script running and send automatically on Monday, Wednesday, and Friday at 12:00 pM."
     )
 
     parser.add_argument(
