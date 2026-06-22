@@ -733,15 +733,15 @@ def main(start_date_str=None, end_date_str=None):
 
         # 4. Email body
         email_body = f"""
-        <p>Dear Team,</p>
-        <p>Please find attached the latest <strong>News letter</strong> date {start_date.strftime('%d %b')} - {end_date.strftime('%d %B %Y')}. in case of any discrepency feel free to contact Advanced Analytics depoartment or write us to amad.atiq@ppmc.gov.pk</p> 
-        <p>Regards,<br>PowerPost</p>
-        """
+        <p>Please find attached the <strong>newsletter</strong> dated {start_date.strftime('%d %b')} – {end_date.strftime('%d %B %Y')}.</p>
+        <p>For any questions or corrections, please reach out to the Advanced Analytics department at <a href="mailto:power.post@ppmc.gov.pk">Advanced Analytics</a>.</p>
+        <br><p>Best regards,<br>
+        <p>Advanced Analytics Department</p>"""
 
         # 5. Multiple recipient emails
         # Add all people here
         recipient_emails = [
-            "amad.atiq@ppmc.gov.pk",
+            "all@ppmc.gov.pk",
         ]
 
         email_subject = (
