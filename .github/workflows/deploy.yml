@@ -15,3 +15,4 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
             cmd.exe /c C:\apps\deploy-script\deploy-powerpost-email.cmd "${{ secrets.GH_TOKEN }}"
+
