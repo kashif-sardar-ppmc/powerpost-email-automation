@@ -759,7 +759,7 @@ def main(start_date_str=None, end_date_str=None):
         # 5. Multiple recipient emails
         # Add all people here
         recipient_emails = [
-            "amad.atiq@ppmc.gov.pk",
+            "all@ppmc.gov.pk",
         ]
 
         email_subject = (
