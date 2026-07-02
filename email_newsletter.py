@@ -582,7 +582,7 @@ def email_report(to_emails, subject, body, pdf_path=None, use_bcc=True):
 # ================= SCHEDULER CONFIG =================
 # Monday=0, Tuesday=1, Wednesday=2, Thursday=3, Friday=4
 SCHEDULE_WEEKDAYS = {0, 2, 4}  # Monday, Wednesday, Friday
-SCHEDULE_HOUR = int(os.getenv("SCHEDULE_HOUR", 12))
+SCHEDULE_HOUR = int(os.getenv("SCHEDULE_HOUR", 8))
 SCHEDULE_MINUTE = int(os.getenv("SCHEDULE_MINUTE", 0))
 SCHEDULE_TIMEZONE = os.getenv("SCHEDULE_TIMEZONE", "Asia/Karachi")
 
@@ -619,26 +619,38 @@ def get_next_scheduled_run(after_dt=None):
 def run_scheduler():
     """
     Keeps this Python script running and automatically sends the report
-    every Monday, Wednesday, and Friday at 8:00 AM Pakistan time.
+    every Monday, Wednesday, and Friday at the configured schedule time.
 
-    Important:
-    - Keep the server/laptop running.
-    - For production, run this file through Task Scheduler, systemd, PM2,
-      Docker, or another process manager so it restarts after reboot.
+    Run with:
+        python main.py --schedule
+
+    Note:
+    - This function is supposed to keep running forever.
+    - It sleeps until the next scheduled run, executes main() once,
+      then calculates the next future run.
     """
+    tz = ZoneInfo(SCHEDULE_TIMEZONE)
+
     print(
         "Newsletter scheduler started. "
         f"Schedule: Monday, Wednesday, Friday at "
-        f"{SCHEDULE_HOUR:02d}:{SCHEDULE_MINUTE:02d} ({SCHEDULE_TIMEZONE})"
+        f"{SCHEDULE_HOUR:02d}:{SCHEDULE_MINUTE:02d} ({SCHEDULE_TIMEZONE})",
+        flush=True
     )
 
+    next_run = get_next_scheduled_run(datetime.now(tz))
+
     while True:
-        now = datetime.now(ZoneInfo(SCHEDULE_TIMEZONE))
-        next_run = get_next_scheduled_run(now)
+        now = datetime.now(tz)
+
+        # If system time changed or next_run is already passed, recalculate safely.
+        if next_run <= now:
+            next_run = get_next_scheduled_run(now + timedelta(minutes=1))
 
         print(
             f"Next scheduled report: "
-            f"{next_run.strftime('%A, %Y-%m-%d %I:%M %p %Z')}"
+            f"{next_run.strftime('%A, %Y-%m-%d %I:%M %p %Z')}",
+            flush=True
         )
 
         sleep_seconds = max(1, int((next_run - now).total_seconds()))
@@ -647,16 +659,22 @@ def run_scheduler():
         try:
             print(
                 f"Running scheduled newsletter at "
-                f"{datetime.now(ZoneInfo(SCHEDULE_TIMEZONE)).strftime('%Y-%m-%d %I:%M %p %Z')}"
+                f"{datetime.now(tz).strftime('%Y-%m-%d %I:%M %p %Z')}",
+                flush=True
             )
+
             main()
-            print("Scheduled newsletter completed successfully.")
+
+            print("Scheduled newsletter completed successfully.", flush=True)
 
         except Exception as e:
-            print(f"Scheduled newsletter failed: {e}")
+            print(f"Scheduled newsletter failed: {e}", flush=True)
 
-        # Prevent duplicate run in the same minute
-        time_module.sleep(60)
+        # Calculate the next future run after this execution.
+        next_run = get_next_scheduled_run(datetime.now(tz) + timedelta(minutes=1))
+
+        # Small safety delay to avoid duplicate execution in the same minute.
+        time_module.sleep(5)
 
 
 def parse_args():
@@ -741,7 +759,7 @@ def main(start_date_str=None, end_date_str=None):
         # 5. Multiple recipient emails
         # Add all people here
         recipient_emails = [
-            "all@ppmc.gov.pk",
+            "amad.atiq@ppmc.gov.pk",
         ]
 
         email_subject = (
