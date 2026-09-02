@@ -518,7 +518,7 @@ def email_report(to_emails, subject, body, pdf_path=None, use_bcc=True):
     """
 
    
-    SMTP_HOST = os.getenv("SMTP_HOST", "zimbramail.nayatel.com")
+    SMTP_HOST = os.getenv("SMTP_HOST", "mail.ppmc.gov.pk")
     SMTP_PORT = int(os.getenv("SMTP_PORT", 587))
     SMTP_USER = os.getenv("SMTP_USER", "power.post@ppmc.gov.pk")
     SMTP_PASS = os.getenv("SMTP_PASS", "ppmc@1122")
